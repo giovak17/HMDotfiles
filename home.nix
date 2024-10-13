@@ -57,7 +57,6 @@ in {
       ".config/zellij".source = ./dotfiles/zellij;
     };
 
-
   };
 
   #NOTE: PROGRAMS OPTIONS
@@ -83,6 +82,10 @@ in {
         cl = "clear";
         z = "zellij";
         winget = "winget.exe";
+      };
+
+      oh-my-zsh = {
+          enable = true;
       };
     };
 
