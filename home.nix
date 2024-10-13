@@ -9,6 +9,13 @@ in {
 
   #NOTE: HOME OPTIONS
   home = {
+    # that this is just "username = username;"
+    inherit username;
+
+    homeDirectory = "/home/${username}";
+
+    stateVersion = "24.05";
+
     packages = with pkgs; [
       neovim
       # Thes are tools for go
@@ -43,19 +50,13 @@ in {
       mysql84
     ];
 
-    # that this is just "username = username;"
-    inherit username;
-
-    homeDirectory = "/home/${username}";
-
-    stateVersion = "24.05";
-
     file = {
-      "hello.txt" = {
-        text = "echo 'Hello world'";
-        executable = true;
-      };
+      #".config/.zshrc".source = ./dotfiles/zshrc/.zshrc;
+      ".config/nvim".source = ./dotfiles/nvim;
+      ".config/starship.toml".source = ./dotfiles/starship/starship.toml;
+      ".config/zellij".source = ./dotfiles/zellij;
     };
+
 
   };
 
@@ -69,6 +70,25 @@ in {
       userEmail = "kevin.giovanni1703@gmail.com";
     };
 
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+
+      shellAliases = {
+        v = "nvim";
+        py = "python";
+        shn = "shutdown now";
+        cl = "clear";
+        z = "zellij";
+        winget = "winget.exe";
+      };
+    };
+
+    starship = {
+      enable = true;
+    };
 
   };
 
