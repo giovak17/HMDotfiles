@@ -1,5 +1,6 @@
-{ lib, pkgs, ...}: let 
+{ lib, config, pkgs, ...}: let 
 username = "giovak";
+dotfilesPath = "${config.home.homeDirectory}/home-manager/dotfiles";
 
 in {
   nixpkgs.config.allowUnfree = true;
@@ -11,6 +12,7 @@ in {
   home = {
     # that this is just "username = username;"
     inherit username;
+    enableNixpkgsReleaseCheck = false;
 
     homeDirectory = "/home/${username}";
 
@@ -50,11 +52,12 @@ in {
       mysql84
     ];
 
+
     file = {
       #".config/.zshrc".source = ./dotfiles/zshrc/.zshrc;
-      ".config/nvim".source = ./dotfiles/nvim;
-      ".config/starship.toml".source = ./dotfiles/starship/starship.toml;
-      ".config/zellij".source = ./dotfiles/zellij;
+      ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/nvim";
+      ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/starship/starship.toml";
+      ".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/zellij";
     };
 
   };
