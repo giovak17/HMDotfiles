@@ -64,13 +64,9 @@ in {
     home-manager.enable = true;
 
     git = {
-      config = {
-        username = "giovak17";
-        email = "kevin.giovanni1703@gmail.com";
-
-      };
       enable = true;
-
+      userName = "giovak";
+      userEmail = "kevin.giovanni1703@gmail.com";
     };
 
     zsh = {
@@ -89,7 +85,7 @@ in {
       };
 
       oh-my-zsh = {
-          enable = true;
+        enable = true;
       };
     };
 

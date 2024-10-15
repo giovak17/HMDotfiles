@@ -6,12 +6,19 @@ return {
       transparent = true,
     },
   },
+  {
+    "catppuccin/nvim",
+    opts = {
+      transparent = true,
+    }
+  },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "no-clown-fiesta",
+      --colorscheme = "no-clown-fiesta",
+      colorscheme = "catppuccin-mocha",
     },
   },
 }
