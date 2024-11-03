@@ -25,6 +25,8 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true }
 )
 
+vim.opt.clipboard:append("unnamedplus")
+
 return {
   { "rcarriga/nvim-notify", enabled = false },
   { "folke/zen-mode.nvim" },
