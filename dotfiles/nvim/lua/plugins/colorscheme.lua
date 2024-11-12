@@ -15,7 +15,6 @@ return {
       transparent = true,
     },
   },
-
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",

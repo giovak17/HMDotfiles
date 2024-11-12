@@ -26,8 +26,8 @@ in {
 
     packages = with pkgs; [
       # Screenshots
-      hyprshot
-      dunst
+      #hyprshot
+      #dunst
       starship
       brightnessctl
       # These are tools for go
@@ -59,19 +59,50 @@ in {
       gdb
       yazi
       wofi
+      fuzzel
       xdg-utils
       swww
+      helix
+      qemu
+
+    # LSP, formatters and stuff
+      lua-language-server
+      nil
+      nixd
+      clang
+      clang-tools
+      lldb_18
+      python312Packages.python-lsp-server
+      pyright
+      ruff
+      pylyzer
+      gopls
+      gotools
+      nodePackages_latest.typescript-language-server
+      markdown-oxide
+      marksman
+      ltex-ls
+
+      # Linters
+      ruff
+
+      # Formatters
+      nixpkgs-fmt
+      stylua
+
 
       #GUI
+      ventoy
       pavucontrol
       firefox
       waybar
       jetbrains.datagrip
-      vscode
       discord
       anki
       onlyoffice-bin
       postman
+      vscode
+      floorp
 
     ];
 
@@ -126,13 +157,17 @@ in {
       userEmail = "kevin.giovanni1703@gmail.com";
     };
 
+    helix = {
+      defaultEditor = true;
+    };
+
     neovim = {
       enable = true;
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
 
-      defaultEditor = true;
+      #defaultEditor = true;
 
       extraPackages = with pkgs; [
         # Language servers

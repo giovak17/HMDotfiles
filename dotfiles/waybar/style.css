@@ -79,7 +79,7 @@
 /* The whole bar */
 #waybar {
 	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
-	background: rgba(0, 0, 0, 0.7); /* #282828e0 */
+	background: rgba(0, 0, 0, 0); /* #282828e0 */
 	color: @white;
 	font-family: JetBrains Mono, Siji;
 	font-family:  "Fira Code", Siji;
